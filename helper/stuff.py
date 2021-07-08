@@ -74,6 +74,7 @@ async def sencc(e):
         buttons=[
             [
                 Button.inline("Default Compress", data=f"encc{key}"),
+                Button.inline("X264", data=f"x264{key}"),
                 Button.inline("Custom Compress", data=f"ccom{key}"),
             ],
             [Button.inline("Back", data=f"back{key}")],
@@ -106,9 +107,9 @@ async def ccom(e):
         repl = await reply
         if "." in repl.text:
             q = repl.text.split(".")[-1]
-            g = repl.text.replace(q, "mkv")
+            g = repl.text.replace(q, "mp4")
         else:
-            g = repl.text + ".mkv"
+            g = repl.text + ".mp4"
         outt = f"encode/{chat}/{g}"
         x = await repl.reply(
             f"Custom File Name : {g}\n\nSend Thumbnail Picture For it."
@@ -123,7 +124,7 @@ async def ccom(e):
             tb = url.replace("https://telegra.ph/file/", "")
         else:
             tb = thum
-        omk = await rep.reply(f"Thumbnail {tb} Setted Successfully")
+        omk = await rep.reply(f"Set Thumbnail {tb} Successfully")
         hehe = f"{outt};{dl};{tb};{dtime}"
         key = code(hehe)
         await customenc(omk, key)
