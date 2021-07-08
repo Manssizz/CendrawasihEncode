@@ -360,7 +360,8 @@ async def encod(event):
         out = f"{rr}/{bb}"
         # thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
-        hehe = f"{out};{dl};{thum};{dtime}"
+        # hehe = f"{out};{dl};{thum};{dtime}"
+        hehe = f"{out};{dl};{dtime}"
         key = code(hehe)
         await xxx.delete()
         inf = await info(dl, event)
